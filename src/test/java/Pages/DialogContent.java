@@ -24,6 +24,44 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//span[contains(text(),'Dashboard')])[2]")
     private WebElement dashboard;
 
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]")
+    private WebElement addBtn;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
+    private WebElement inputName;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
+    private WebElement inputCode;
+
+    @FindBy(xpath = "//ms-save-button//button")
+    private WebElement saveBtn;
+
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
+    public WebElement successMessage;
+
+    @FindBy(xpath = "//div[contains(text(),'error')]")
+    public WebElement errorMessage;
+
+    public WebElement getAddBtn() {
+        return addBtn;
+    }
+
+    public WebElement getSaveBtn() {
+        return saveBtn;
+    }
+
+    public WebElement getSuccessMessage() {
+        return successMessage;
+    }
+
+    public WebElement getInputCode() {
+        return inputCode;
+    }
+
+    public WebElement getInputName() {
+        return inputName;
+    }
+
     public WebElement getUsername() {
         return username;
     }

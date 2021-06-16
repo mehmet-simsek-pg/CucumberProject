@@ -48,8 +48,9 @@ public class Parent {
             e.printStackTrace();
         }
     }
-    public void verifyElementContainsText(WebElement webElement, String text){
-       wait.until(ExpectedConditions.textToBePresentInElement(webElement,text));
+
+    public void verifyElementContainsText(WebElement webElement, String text) {
+        wait.until(ExpectedConditions.textToBePresentInElement(webElement, text));
         Assert.assertTrue(webElement.getText().toLowerCase().contains(text.toLowerCase()));
     }
 }
