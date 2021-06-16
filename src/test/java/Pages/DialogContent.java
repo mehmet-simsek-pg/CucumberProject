@@ -21,7 +21,7 @@ public class DialogContent extends Parent {
     @FindBy(css = "button[aria-label='LOGIN']")
     private WebElement loginBtn;
 
-    @FindBy(xpath = "//span[text()='Dashboard']")
+    @FindBy(xpath = "(//span[contains(text(),'Dashboard')])[2]")
     private WebElement dashboard;
 
     public WebElement getUsername() {

@@ -5,14 +5,15 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
-public class Parent  {
+public class Parent {
     WebDriverWait wait;
-
+    JavascriptExecutor js;
 
     public Parent() {
+        js = (JavascriptExecutor) BaseWebDriver.getDriver();
         wait = new WebDriverWait(BaseWebDriver.getDriver(), 30);
-
     }
 
     public void sendKeysFunction(WebElement webElement, String value) {
@@ -33,7 +34,6 @@ public class Parent  {
     }
 
     public void scrollToElement(WebElement webElement) {
-        JavascriptExecutor js= (JavascriptExecutor) BaseWebDriver.getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", webElement);
     }
 
@@ -41,11 +41,15 @@ public class Parent  {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    public static void myWait(int second){
+    public static void myWait(int second) {
         try {
-            Thread.sleep(second*1000);
-        }catch (Exception e){
+            Thread.sleep(second * 1000);
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void verifyElementContainsText(WebElement webElement, String text){
+       wait.until(ExpectedConditions.textToBePresentInElement(webElement,text));
+        Assert.assertTrue(webElement.getText().toLowerCase().contains(text.toLowerCase()));
     }
 }
