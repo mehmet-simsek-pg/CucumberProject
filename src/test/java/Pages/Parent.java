@@ -1,6 +1,7 @@
 package Pages;
 
 import Utilies.BaseWebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -53,4 +54,8 @@ public class Parent {
         wait.until(ExpectedConditions.textToBePresentInElement(webElement, text));
         Assert.assertTrue(webElement.getText().toLowerCase().contains(text.toLowerCase()));
     }
+    public void waitUntilListLessThan(WebElement webElement) {
+        wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.xpath("//ms-delete-button//button"),2));
+    }
+
 }

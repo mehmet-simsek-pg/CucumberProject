@@ -37,10 +37,71 @@ public class DialogContent extends Parent {
     private WebElement saveBtn;
 
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
-    public WebElement successMessage;
+    private WebElement successMessage;
 
     @FindBy(xpath = "//div[contains(text(),'error')]")
-    public WebElement errorMessage;
+    private WebElement errorMessage;
+
+    @FindBy(xpath = "//div[contains(text(),'already exists')]")
+    private WebElement alreadyExists;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']//input")
+    private WebElement InputShortName;
+
+    @FindBy(xpath = "//ms-text-field[@placeholder='GENERAL.FIELD.NAME']//input")
+    private WebElement searchInputName;
+
+    @FindBy(xpath = "//ms-search-button//button")
+    private WebElement searchBtn;
+
+    @FindBy(xpath = "//ms-delete-button//button")
+    private WebElement deleteBtn;
+
+    @FindBy(xpath = "//span[contains(text(),'Delete')]")
+    private WebElement deleteDialog;
+
+    @FindBy(xpath = "//ms-edit-button//button")
+    private WebElement editBtn;
+
+    @FindBy(css = "button[aria-label='Close dialog']")
+    private WebElement closeDialog;
+
+
+    public WebElement getSearchInputName() {
+        return searchInputName;
+    }
+
+    public WebElement getDeleteDialog() {
+        return deleteDialog;
+    }
+
+    public WebElement getCloseDialog() {
+        return closeDialog;
+    }
+
+    public WebElement getAlreadyExists() {
+        return alreadyExists;
+    }
+
+    public WebElement getSearchBtn() {
+        return searchBtn;
+    }
+
+    public WebElement getEditBtn() {
+        return editBtn;
+    }
+
+    public WebElement getDeleteBtn() {
+        return deleteBtn;
+    }
+
+    public WebElement getInputShortName() {
+        return InputShortName;
+    }
+
+    public WebElement getErrorMessage() {
+        return errorMessage;
+    }
 
     public WebElement getAddBtn() {
         return addBtn;

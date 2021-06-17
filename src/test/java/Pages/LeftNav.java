@@ -21,8 +21,29 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "//span[text()='Countries']")
     private WebElement country;
 
+    @FindBy(xpath = "//span[text()='States']")
+    private WebElement states;
+
+    @FindBy(xpath = "//span[text()='Cities']")
+    private WebElement cities;
+
     @FindBy(xpath = "//span[text()='Citizenships']")
     private WebElement citizenShip;
+
+    @FindBy(xpath = "//span[text()='Nationalities']")
+    private WebElement nationalities;
+
+    public WebElement getStates() {
+        return states;
+    }
+
+    public WebElement getCities() {
+        return cities;
+    }
+
+    public WebElement getNationalities() {
+        return nationalities;
+    }
 
     public WebElement getCitizenShip() {
         return citizenShip;
