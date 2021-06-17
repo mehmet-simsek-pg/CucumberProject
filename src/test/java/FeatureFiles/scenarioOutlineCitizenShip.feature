@@ -8,6 +8,9 @@ Feature: Citizenship with scenario outline
 
   Scenario Outline: Citizen create and delete with scenario outline
     When User a citizenship name as "<citizenShipName>" shortname as "<shortName>"
+    Then Success massage should be displayed
+
+    When User a citizenship name as "<citizenShipName>" shortname as "<shortName>"
     Then Already exists message should be displayed
     And Click on close button
 
@@ -17,8 +20,9 @@ Feature: Citizenship with scenario outline
     Examples:
       | citizenShipName | shortName |
       | Turkish2        | TR        |
-      | Turkish3        | TR        |
-      | Turkish4        | TR        |
-      | Turkish5        | TR        |
+      | English2         | EN        |
+      | France2          | FR        |
+      | Germany2         | DE        |
+
 
 
