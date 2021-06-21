@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class DialogContent extends Parent {
 
     public DialogContent() {
@@ -32,6 +34,9 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
     private WebElement inputCode;
+
+    @FindBy(xpath = "//mat-chip-list[@formcontrolname='roles']//input")
+    private WebElement userType;
 
     @FindBy(xpath = "//ms-save-button//button")
     private WebElement saveBtn;
@@ -66,6 +71,23 @@ public class DialogContent extends Parent {
     @FindBy(css = "button[aria-label='Close dialog']")
     private WebElement closeDialog;
 
+    @FindBy(css = "mat-option[role='option']")
+    private List<WebElement> roleOption;
+
+    @FindBy(xpath = "(//div[@class='ps__rail-y'])[2]")
+    private WebElement rightScroll;
+
+    public WebElement getRightScroll() {
+        return rightScroll;
+    }
+
+    public List<WebElement> getRoleOption() {
+        return roleOption;
+    }
+
+    public WebElement getUserType() {
+        return userType;
+    }
 
     public WebElement getSearchInputName() {
         return searchInputName;

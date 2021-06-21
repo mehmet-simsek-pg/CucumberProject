@@ -6,9 +6,13 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class CountryStep {
+    private final LeftNav leftNav;
+    private final DialogContent dialogContent;
 
-    LeftNav leftNav = new LeftNav();
-    DialogContent dialogContent = new DialogContent();
+    public CountryStep(LeftNav leftNav, DialogContent dialogContent) {
+        this.leftNav = leftNav;
+        this.dialogContent = dialogContent;
+    }
 
     @Then("^Navigate to country page$")
     public void navigate_to_country_page() {
@@ -22,7 +26,7 @@ public class CountryStep {
     public void create_a_country() {
 
         leftNav.clickFunction(dialogContent.getAddBtn());
-        leftNav.sendKeysFunction(dialogContent.getInputName(), "Dortmund Merkez");
+        leftNav.sendKeysFunction(dialogContent.getInputName(), "Dortmund Merkez1");
         leftNav.sendKeysFunction(dialogContent.getInputCode(), "44369");
         leftNav.clickFunction(dialogContent.getSaveBtn());
 

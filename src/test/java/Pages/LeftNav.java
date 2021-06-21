@@ -15,6 +15,9 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "(//span[text()='Setup'])[1]")
     private WebElement setupOne;
 
+    @FindBy(xpath = "(//span[text()='Setup'])[4]")
+    private WebElement setupInventory;
+
     @FindBy(xpath = "//span[text()='Parameters']")
     private WebElement parameters;
 
@@ -32,6 +35,24 @@ public class LeftNav extends Parent {
 
     @FindBy(xpath = "//span[text()='Nationalities']")
     private WebElement nationalities;
+
+    @FindBy(xpath = "(//span[text()='Inventory'])[1]")
+    private WebElement inventory;
+
+    @FindBy(xpath = "(//span[text()='Item Categories'])[1]")
+    private WebElement itemCategories;
+
+    public WebElement getItemCategories() {
+        return itemCategories;
+    }
+
+    public WebElement getSetupInventory() {
+        return setupInventory;
+    }
+
+    public WebElement getInventory() {
+        return inventory;
+    }
 
     public WebElement getStates() {
         return states;

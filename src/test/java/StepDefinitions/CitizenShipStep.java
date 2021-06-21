@@ -2,14 +2,23 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Pages.LeftNav;
+import Utilies.BaseWebDriver;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 
 public class CitizenShipStep {
 
-    LeftNav leftNav = new LeftNav();
-    DialogContent dialogContent = new DialogContent();
+    private final LeftNav leftNav;
+    private final DialogContent dialogContent;
+
+    public CitizenShipStep(LeftNav leftNav, DialogContent dialogContent) {
+        this.leftNav = leftNav;
+        this.dialogContent = dialogContent;
+    }
 
     @Then("^Navigate to citizenship page$")
     public void navigate_to_citizenship_page() {
@@ -38,9 +47,10 @@ public class CitizenShipStep {
 
     @When("^User delete the \"([^\"]*)\"$")
     public void userDeleteThe(String citizenShipName){
+        dialogContent.scrollUpToElement(dialogContent.getRightScroll());
         dialogContent.sendKeysFunction(dialogContent.getSearchInputName(), citizenShipName);
         dialogContent.clickFunction(dialogContent.getSearchBtn());
-        dialogContent.waitUntilListLessThan(dialogContent.getDeleteBtn());
+        dialogContent.waitUntilListLessThan(By.xpath("//ms-delete-button//button"),2);
         dialogContent.clickFunction(dialogContent.getDeleteBtn());
         dialogContent.clickFunction(dialogContent.getDeleteDialog());
     }
