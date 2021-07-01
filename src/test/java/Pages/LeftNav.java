@@ -42,6 +42,48 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "(//span[text()='Item Categories'])[1]")
     private WebElement itemCategories;
 
+    @FindBy(xpath = "//span[text()='Fees']")
+    private WebElement fees;
+
+    @FindBy(xpath = "(//span[text()='Entrance Exams'])[1]")
+    private WebElement entranceExamsOne;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[2]")
+    private WebElement setupTree;
+
+    @FindBy(xpath = "(//span[text()='Entrance Exams'])[2]")
+    private WebElement entranceExamsTwo;
+
+    @FindBy(xpath = "//span[text()='Human Resources']")
+    private WebElement humanResources;
+
+    @FindBy(xpath = "//span[text()='Employees']")
+    private WebElement employees ;
+
+    public WebElement getHumanResources() {
+        return humanResources;
+    }
+
+    public WebElement getEmployees() {
+        return employees;
+    }
+
+    public WebElement getEntranceExamsOne() {
+        return entranceExamsOne;
+    }
+
+    public WebElement getSetupTree() {
+        return setupTree;
+    }
+
+    public WebElement getEntranceExamsTwo() {
+        return entranceExamsTwo;
+    }
+
+    public WebElement getFees() {
+        return fees;
+    }
+
     public WebElement getItemCategories() {
         return itemCategories;
     }

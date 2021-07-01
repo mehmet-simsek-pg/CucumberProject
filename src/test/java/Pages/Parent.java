@@ -49,7 +49,7 @@ public class Parent {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    public static void myWait(int second) {
+    public void myWait(int second) {
         try {
             Thread.sleep(second * 1000);
         } catch (Exception e) {

@@ -4,6 +4,7 @@ import Pages.DialogContent;
 import Pages.LeftNav;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.By;
 
 public class CountryStep {
     private final LeftNav leftNav;
@@ -44,5 +45,15 @@ public class CountryStep {
         leftNav.sendKeysFunction(dialogContent.getInputCode(), countryCode);
         leftNav.clickFunction(dialogContent.getSaveBtn());
 
+    }
+
+    @When("^User edit the \"([^\"]*)\" to \"([^\"]*)\"$")
+    public void userEditTheTo(String oldCountryName, String newCountryName) {
+       dialogContent.sendKeysFunction(dialogContent.getSearchInputName(),oldCountryName);
+       dialogContent.clickFunction(dialogContent.getSearchBtn());
+       dialogContent.waitUntilListLessThan(By.xpath("//ms-edit-button//button"),2);
+       dialogContent.clickFunction(dialogContent.getEditBtn());
+       dialogContent.sendKeysFunction(dialogContent.getInputName(),newCountryName);
+       dialogContent.clickFunction(dialogContent.getSaveBtn());
     }
 }

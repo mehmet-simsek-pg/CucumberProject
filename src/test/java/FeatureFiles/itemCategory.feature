@@ -14,6 +14,6 @@ Feature: Item categories
     Then Success massage should be displayed
     Examples:
       | InventoryItemName |  | UserTypeOption |
-      | Laptop2343         |  | Student        |
+      | Laptop2343        |  | Student        |
       | Desk12            |  | Manager        |
       | Table13           |  | Teacher        |

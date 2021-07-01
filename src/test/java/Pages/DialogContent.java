@@ -77,6 +77,76 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//div[@class='ps__rail-y'])[2]")
     private WebElement rightScroll;
 
+    @FindBy(xpath = "//input[@id='ms-integer-field-0']")
+    private WebElement priorityInput;
+
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']/input")
+    private WebElement priorityCode;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']/input")
+    private WebElement integrationCode;
+
+    @FindBy(id = "mat-select-value-7")
+    private WebElement academicPeriod;
+
+    @FindBy(css = "span[class='mat-option-text']")
+    private WebElement academicPeriod2;
+
+    @FindBy(id = "mat-select-value-9")
+    private WebElement gradeLevel;
+
+    @FindBy(css = "span[class='mat-option-text']")
+    private WebElement gradeLevel2;
+
+    @FindBy(xpath = "//mat-form-field//input")
+    private WebElement formSearchInput;
+
+    @FindBy(xpath = "//ms-search-button//button")
+    private WebElement searchButton;
+
+    @FindBy(xpath = "(//button[@class='consent-give'])[1]")
+    private WebElement acceptCookies;
+
+    public WebElement getAcceptCookies() {
+        return acceptCookies;
+    }
+
+    public WebElement getAcademicPeriod() {
+        return academicPeriod;
+    }
+
+    public WebElement getAcademicPeriod2() {
+        return academicPeriod2;
+    }
+
+    public WebElement getGradeLevel() {
+        return gradeLevel;
+    }
+
+    public WebElement getGradeLevel2() {
+        return gradeLevel2;
+    }
+
+    public WebElement getFormSearchInput() {
+        return formSearchInput;
+    }
+
+    public WebElement getSearchButton() {
+        return searchButton;
+    }
+
+    public WebElement getPriorityInput() {
+        return priorityInput;
+    }
+
+    public WebElement getPriorityCode() {
+        return priorityCode;
+    }
+
+    public WebElement getIntegrationCode() {
+        return integrationCode;
+    }
+
     public WebElement getRightScroll() {
         return rightScroll;
     }
