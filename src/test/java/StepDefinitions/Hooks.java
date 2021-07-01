@@ -28,7 +28,7 @@ public class Hooks {
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
 
-        if (!scenario.isFailed()) {
+        if (scenario.isFailed()) {
             TakesScreenshot screenshot = (TakesScreenshot) BaseWebDriver.getDriver();
             File file = screenshot.getScreenshotAs(OutputType.FILE);
 
